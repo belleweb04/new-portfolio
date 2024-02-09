@@ -21,16 +21,11 @@ body > *{
     padding:0 40px 0;
     background:#f9f9f9;
 }
-.fixed{
-    position:fixed;
-    z-index: 1;
-}
-.title{
+.header-title{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     letter-spacing: 0.1em;
-
 }
 .h1{
     font-size:28px;
@@ -46,15 +41,20 @@ body > *{
     list-style: none;
     display:flex;
 }
-.navitem{
+.nav-item{
     width:70px;
     text-align: right;
 }
-.navitem  a{
+.nav-item  a{
     text-decoration: none;
     color:#3e3e3e;
-
 }
+
+.fixed{
+    position:fixed;
+    z-index: 1;
+}
+
 
 
 /*main*/
@@ -86,26 +86,15 @@ body > *{
     text-align: right;
     color:#3c3c3c;
 }
-.copy{
-    font-size: 48px;
-    line-height: 1.2em;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    position: absolute;
-    top: 6%;
-    left: 4%;
-    color:#fff;
-}
+
 .bgcover{
     position:relative;
     border-radius: 1.25vw;
 }
-
 #work{
     grid-area:work;
     background:#47D0B9;
-    }
-   
+    } 
 #face{
     grid-area:face;
     background:#c1a26e;
@@ -113,7 +102,6 @@ body > *{
     position:relative;
     background-size:cover;
     background-position: bottom;
-
 }
 #text{
     grid-area:text;
@@ -137,8 +125,18 @@ body > *{
     position:relative;
     background-size:cover;
     background-position: bottom;
-
 }
+.copy{
+    font-size: 48px;
+    line-height: 1.2em;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    position: absolute;
+    top: 6%;
+    left: 4%;
+    color:#fff;
+}
+
 #about{
     grid-area:about;
     background:#C8AFFE;
@@ -150,7 +148,6 @@ body > *{
 #icon{
     grid-area:icon;
 }
-
 .footer{
     height:40px;
     background-color:#848282 ;
@@ -163,7 +160,7 @@ body > *{
         width:100%;
         justify-content: center;
     }
-    .title,.subtitle{
+    .header-title,.subtitle{
         display: block;
         text-align: center;
     }
@@ -173,19 +170,17 @@ body > *{
     .h1{
         font-size:20px;
     }
+
     .innerGrid {
-      grid-template-rows:18vh 12vh 15vh 12vh 8vh;
-      grid-template-areas:
-      "image image image image"
+    grid-template-rows:18vh 12vh 15vh 12vh 8vh;
+    grid-template-areas:
+    "image image image image"
         "work work work work"
         "face text text text"
         "about about about about"
         "contact contact icon icon";
         grid-row-gap: 16px;
         grid-column-gap: 12px;
-    }
-    .copy{
-        font-size: 28px;
     }
     .text-title{
         font-size:16px;
@@ -194,6 +189,12 @@ body > *{
     .text-contents{
         font-size:13px;
         margin:2%;
+    }
+    .copy{
+        font-size: 26px;
+    }
+    .boxName{
+        font-size: 20px;
     }
   }
 
@@ -206,16 +207,14 @@ body > *{
     grid-template-columns: 30% 1fr;
     grid-gap: 1rem;
 }
-
 .workSide{
   position: sticky;
   top: 100px;
   align-self: start;
-}
-.worksTxt{
+  .worksTxt{
     margin: 10px 5%;
 }
-
+}
 
 ul.card{
     display: grid;
@@ -257,6 +256,7 @@ li.card-list{
     background: #C8AFFE;
     color: #fff;
 }
+
 @media screen and (max-width: 979px) {
 .worksWrapper{
     padding:100px 40px 40px 40px ;
@@ -280,7 +280,6 @@ li.card-list{
    /* max-width: 1200px;*/
     padding:100px 80px 40px 80px; 
     margin: 0 auto;
-    height:100vh;
 }
 .workDetail-product{
     display: grid;
@@ -290,17 +289,20 @@ li.card-list{
     grid-gap: 1.75rem;
     margin-top:40px;
 }
+.worksTxt{
+    margin-top:40px;
+}
 .detailImg{
     grid-row: 1;
     grid-column: 1/2;
-    background:#aaa;
+    /*background:#aaa;*/
     border-radius: 1.25vw;
 }
 .detail-list{
     grid-row: 1;
     grid-column: 2/3;
-    border:2px solid #aaa;
-    border-radius: 1.45vw;
+    /*border:2px solid #aaa;
+    border-radius: 1.45vw;*/
     padding:20px;
     margin:0;
 }
@@ -320,6 +322,30 @@ li.card-list{
 .detail-list li::marker {
     color: #06b797;
     font-size: 1.1em;
+}
+
+.detail-grid{
+    display: grid;
+    grid-template-rows:repeat(8, 250px);
+    grid-template-columns: 50% 50%;
+    grid-gap: 1rem;
+}
+.detail-info {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 40% 1fr;
+    grid-gap: 2.5vw;
+    padding: 60px;
+}
+.detail-info-img{
+    grid-row: 1;
+    grid-column: 1/2;
+    border-radius: 1.25vw;
+}
+.detail-info-text{
+    grid-row: inherit;
+    grid-column: 2/3;
+    margin: 20px 60px 20px 20px;
 }
 
 @media screen and (max-width: 979px) {
@@ -342,5 +368,21 @@ li.card-list{
     .detail-list li {
         font-size:0.6em;
     }
+    .detail-info {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 100%;
+        grid-gap: 2.5vw;
+        padding: 60px;
+    }
+    .detail-info-img{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .detail-info-text{
+        grid-row: 2;
+        grid-column: 1;
+    }
+
     }
     
