@@ -236,6 +236,7 @@ h2{
     display: grid;
     grid-template-columns: 30% 1fr;
     grid-gap: 1rem;
+    min-height:100vh;
 }
 .workSide{
   position: sticky;
@@ -470,24 +471,116 @@ li.card-list{
         grid-row: 1;
         grid-column: 1/2;
         border-radius: 1.25vw;
+        padding:30px;
     }
     .about-text{
         grid-row: inherit;
         grid-column: 2/3;
-
-        .h3{
-            color: #06b797;
-            font-weight: normal;
-            font-size: 1.6em;
-        }
-        .h4{
-            margin-top:18px;
-        }
         p{
-            font-size:0.9em;
-            line-height: 1.75em;
-            margin-top:10px;
+            font-size:1em;
         }
     }
+
+    .h3{
+        color: #06b797;
+        font-weight: normal;
+        font-size: 1.6em;
+    }
+    .name{
+        font-size: 1.6em;
+        font-weight: normal;
+        margin-top: 20px;
+    }
+
+    .h4{
+        margin-top:18px;
+    }
+    p{
+        font-size:0.9em;
+        line-height: 1.75em;
+        margin-top:10px;
+    }
+    .skill-grid{
+        display: grid;
+        grid-template-rows: 1fr 1fr ;
+        grid-template-columns: 50% 1fr ;
+        grid-gap: 1.5vw;
+        justify-content: center;
+        margin-top:20px;
+    }
+    .box-011 {
+        position: relative;
+        width: 100%;
+        margin: 1.9em auto 0;
+        padding: 1em 1.5em;
+        border: 2px solid #a3a3a3;
+        border-radius: 3px;
+    }
     
+    .box-011 span {
+        position: absolute;
+        top: -1.9em;
+        left: -2px;
+        padding: .2em .8em;
+        border-radius: 5px 5px 0 0;
+        background-color: #a3a3a3;
+        color: #fff;
+    }
+    
+    .img-flex{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        .logos{
+            min-width:auto;
+            height:6.5vh;
+        }
+        .logos2{
+            min-width:auto;
+            height:5.5vh;
+        }
+    }
+    .box-011 p {
+        margin-top: 2em;
+        color: #333;
+    }
+    .about-detail{
+        margin:5em 0 15em;
+    p{
+      font-size:1em;  
+    }
+    }
+    
+    @media screen and (max-width: 979px) {
+        .about-info {
+            grid-template-rows: none ;
+            grid-template-columns: 1fr;
+            padding: 0;
+        }
+        .about-img{
+            display: none;
+        }
+        .img-flex{
+            .logos{
+                min-width:auto;
+                height:4vh;
+                margin:0.8vh;
+            }
+        }
+
+        .skill-grid{
+            grid-template-rows: 1fr 1fr 1fr 1fr ;
+            grid-template-columns:100% ;
+
+        }
+        .about-skill{
+            .h3{
+            margin-top:2em;
+            }
+        }
+        .skill-grid{
+            grid-gap: 1.2vh;
+        }
+    }
     
