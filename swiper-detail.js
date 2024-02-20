@@ -1,12 +1,13 @@
-const swiper = new Swiper(".swiper", {
-    spaceBetween: 50,
-    // ページネーションが必要なら追加
-    pagination: {
-      el: ".swiper-pagination"
-    },
-    // ナビボタンが必要なら追加
+<script>
+  var swiper = new Swiper('.swiper-container', {
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    }
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop: true,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
   });
+</script>
