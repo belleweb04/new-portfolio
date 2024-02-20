@@ -7,14 +7,16 @@ body{
     height:100%;
 }
 body > *{
-    font-family:"Noto Sans JP";
+    font-family:"Noto Sans JP", sans-serif;
     font-weight: 400;
     font-style: normal;
     color:#5a5a5a;
-    a{
-        color:#5a5a5a;
-    }
 }
+a:link { color:#83fce6; }
+a:visited { color: #d4a3ff; }
+a:hover { color: #f6a5ed; }
+a:active { color: #ffd500; }
+
 .header{
     font-family: "cairo", sans-serif;
     display: flex;
@@ -24,20 +26,25 @@ body > *{
     width:100%;
     padding:0 40px 0;
     background:#f9f9f9;
+    z-index: 100;
+    a{
+        text-decoration: none !important;
+    }
 }
 .header-title{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     letter-spacing: 0.1em;
-    a{
-        text-decoration: none;
-    }
+}
+.header-title > a{
+    text-decoration: none;
 }
 .h1{
     font-size:28px;
     color:#06B797;
     font-weight: normal;
+
 }
 .subtitle{
     font-size:18px;
@@ -113,15 +120,15 @@ h2{
 #work{
     grid-area:work;
     background:#47D0B9;
-    background-image: url("./img/workImg.png");
-    background-size: 400px;
+    background-image: url("img/workImg.png");
+    background-size: 500px;
     background-position: 10px 10px;
     background-repeat: no-repeat;
     } 
 #face{
     grid-area:face;
     background:#c1a26e;
-    background-image: url(./img/kirakira-img.png);
+    background-image: url("img/kirakira-img.png");
     position:relative;
     background-size:cover;
     background-position: bottom;
@@ -131,21 +138,26 @@ h2{
     background:#ffffff;
     padding:10px 18px;
     color:#5a5a5a;
+    position:relative;
 }
 .text-title{
     font-size:1.6em;
     font-weight:normal;
+    position:absolute;
+    top:5%;
 }
 .text-contents{
     line-height: 1.6em;
     margin-top: 1vh;
+    position:absolute;
+    bottom:8%;
 }
 
 #image{
     grid-area:image;
     background:#eaea02;
-    background-image: url(./img/image1.png);
     position:relative;
+   background-image: url("./img/image1.png");
     background-size:cover;
     background-position: bottom;
 }
@@ -157,8 +169,9 @@ h2{
         bottom: 0;
         left: 0;
         border-radius:1.25vw;
+        z-index:1;
     background: rgb(253,187,45);
-    background: linear-gradient(0deg, rgba(253,187,45,0.2) 30%, rgb(255 222 37 / 80%) 100%);
+    background: linear-gradient(0deg, rgba(253,187,45,0.2) 0%, rgb(255 222 37 / 80%) 100%);
     }
 .copy{
     font-size: 48px;
@@ -169,12 +182,13 @@ h2{
     top: 6%;
     left: 4%;
     color:#fff;
+    z-index:2;
 }
 
 #about{
     grid-area:about;
     background:#C8AFFE;
-    background-image: url(./img/aboutImg2.png);
+    background-image: url("img/aboutImg2.png");
     background-size: 300px;
     background-position: -50px -100px;
     background-repeat: no-repeat;
@@ -192,24 +206,47 @@ h2{
 }
 
 /*
-.bg-slider {
-	background-position:center center;
-	background-size: cover;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.slick__bg {
+    padding-bottom:14.6%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius:1.25vw;
+    position: absolute;
+max-width: 100%;
+max-height:100%;
 }
-.bg-slider__title{
-	color: #fff;
-	font-size: 48px;
-	line-height: 1.5;
-	font-weight: bold;
-	text-align:center;
-	text-shadow: 1px 1px 1px #000;
-}*/
+.slick__bg img {
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+}
+// それぞれの背景画像を個別に指定していく
+
+.slick__bg01 {
+    background-image: url("img/image1.png");
+}
+.slick__bg02 {
+    background-image: url("img/image2.png");
+}
+.slick__bg03 {
+    background-image: url("img/image3.png");
+}
+.slick__bg04 {
+    background-image: url("img/image4.png");
+}
+.slick__bg05 {
+    background-image: url("img/image5.png");
+}
+*/
+
 
 
 @media screen and (max-width: 979px) {
+    .main{
+        height:100vh;
+        padding:100px 20px 20px 20px;
+    }
     .sp-none{
         display:none;
     }
@@ -235,9 +272,8 @@ h2{
             "work work work work"
             "face text text text"
             "about about about about"
-            "contact contact icon icon";
+            "contact contact contact contact";
         grid-row-gap: 5.2vw;
-        grid-column-gap: 3.2vw;
     }
     .text-title{
         font-size:1.2em;
@@ -247,6 +283,9 @@ h2{
         font-size: 0.8em;
         line-height: 1.4em;
         margin-top: 0;
+        position: absolute;
+        top: 50%;
+        font-size: 0.7em;
     }
     .copy{
         font-size: 2em;
@@ -305,6 +344,7 @@ li.card-list{
     bottom: 6%;
     right: 8%;
     text-align: right;
+    color:#5a5a5a;
 }
 .temp::before{
     position: absolute;
@@ -331,7 +371,7 @@ li.card-list{
     color: #259dee;
 }
 .Continue{
-    color: #fcffff;
+    color: #fcffff !important;
     background: linear-gradient(135deg, #ebfffb 0%, #90fff4 60%, #f3c5ff 80%);
     background-size: 200% 200%;
     animation: gradationAnim 5s ease infinite;
@@ -415,6 +455,42 @@ li.card-list{
 }
 .strong{
     font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    width: 300px;
+    display: inline;
+    position: relative;
+}
+
+.strong::before {
+    content: "";
+    width: 0;
+    height: 30px;
+    display: block;
+    background: linear-gradient(transparent 60%, #fff200 60%);
+    position: absolute;
+    top: -7px;
+    left: 0;
+    z-index: -2;
+    animation: underAnime 3s forwards ease-out ;
+}
+
+@keyframes underAnime {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.nameSign{
+    text-align: right;
+    margin-right: 30%;
+    font-size: 1.2em !important;
+    letter-spacing: 0.1em;
+    margin-top: 2.8em;
 }
 
 .detail-grid{

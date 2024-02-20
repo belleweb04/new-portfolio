@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
     <title>Naomi Sato's　Portfolio </title>
-    <!-- reset.css modern-css-reset -->
-<link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
-/>
-<link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qph0dnc.css">
 
-    <!--script src="//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script-->
-    <!--script src="js/jquery.bgswitcher.js"></script--> 
+    <!-- reset.css modern-css-reset -->
+<link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/>
+<link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/qph0dnc.css">
+
+    <!-- css -->
+<link rel="stylesheet" href="./slick/slick.css">
+<link rel="stylesheet" href="./slick/slick-theme.css">
+<link rel="stylesheet" href="./style.css">
+
+<!-- js -->
+<script type="text/javascript" src="./slick/slick.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
 </head>
 <body>
    <header class="header fixed">
@@ -50,12 +55,22 @@
                     これまでの仕事をどうぞご覧ください。
                 </p>
             </div>
-            <div id="image" class="bgcover bg-slider">
+            <div id="image" class="bgcover">
                 <p class="copy">
                     Make web creation<br>more FUN！
                 </p>
-
+                <!--
+                <div  class="slick">
+                    <div class="slick__bg slick__bg01"></div>
+                    <div class="slick__bg slick__bg02"></div>
+                    <div class="slick__bg slick__bg03"></div>
+                    <div class="slick__bg slick__bg04"></div>
+                    <div class="slick__bg slick__bg05"></div>
+                </div>-->
             </div>
+            <!--div id="image" class="bgcover bg-slider"-->
+            <!--/div-->
+
             <div id="about" class="bgcover">
                 <a href="./about.html" class="link">
                 <p class="boxName">
@@ -82,12 +97,23 @@
    <footer class="footer">
 
    </footer>
-   <!--script>
-   jQuery(function($) {
-       $('.bg-slider').bgSwitcher({
-           images: ['img/image1.png','img/image1.png','img/image1.png'], // 切り替える背景画像を指定
-       });
-   });
-   </!script-->
+<!-- jquery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<!-- slickが下 -->
+<script type="text/javascript" src="./slick/slick.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
+   <script>
+    $(function() {
+        $('.slick').slick({
+            fade: true,
+            autoplay: true,
+            speed: 1500,
+            autoplaySpeed : 2000,
+            pauseOnFocus: false,
+            pauseOnHover: false,
+            arrows: false,
+        })
+    });
+   </script>
 </body>
 </html>
